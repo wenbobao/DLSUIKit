@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'src/signdociosfoundations.embeddedframework/Frameworks/WacomDevice.framework',
                               'src/signdociosfoundations.embeddedframework/signdociosfoundations.framework'
   s.resources  = 'src/signdoc.xcassets', 'src/signdociosfoundations.embeddedframework/Resources/*'
-  s.frameworks = "Accelerate", "CoreBluetooth",
-  # s.frameworks = "Accelerate", "CoreBluetooth", "Security", "QuartzCore", "OpenGLES", "CoreGraphics", "CoreFoundation", "CoreText"
+  # s.frameworks = "Accelerate", "CoreBluetooth",
+  s.frameworks = "Accelerate", "CoreBluetooth", "Security", "QuartzCore", "OpenGLES", "CoreGraphics", "CoreFoundation", "CoreText"
   s.requires_arc = true
   s.libraries = 'z', 'c++'
   s.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC','-all_load', '-lstdc++.6', '-lz']}
