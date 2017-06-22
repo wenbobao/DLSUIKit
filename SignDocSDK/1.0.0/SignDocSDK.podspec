@@ -9,13 +9,13 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author       = "wenbobao"
   s.platform     = :ios, "8.0"
-  s.source       = { :svn => "https://cangzpwsvn01.aia.biz/svn/iPOS/Philippine/Trunk/8_Source/DLS/SignDocSDK/trunk/src" }
+  s.source       = { :svn => "https://cangzpwsvn01.aia.biz/svn/iPOS/Philippine/Trunk/8_Source/DLS/SignDocSDK/trunk" }
   # s.public_header_files = "trunk/src/**/*.h"
-  s.source_files  =  'dummy.cpp', 'include/*.{h}'
-  s.vendored_libraries  = '*.{a}'
-  s.vendored_frameworks = 'signdociosfoundations.embeddedframework/Frameworks/WacomDevice.framework',
-                              'signdociosfoundations.embeddedframework/signdociosfoundations.framework'
-  s.resources  = 'signdoc.xcassets', 'signdociosfoundations.embeddedframework/Resources/*'
+  s.source_files  =  'src/dummy.cpp', 'src/include/*.{h}'
+  s.vendored_libraries  = 'src/*.{a}'
+  s.vendored_frameworks = 'src/signdociosfoundations.embeddedframework/Frameworks/WacomDevice.framework',
+                              'src/signdociosfoundations.embeddedframework/signdociosfoundations.framework'
+  s.resources  = 'src/signdoc.xcassets', 'src/signdociosfoundations.embeddedframework/Resources/*'
   s.frameworks = "Accelerate", "CoreBluetooth",
   # s.frameworks = "Accelerate", "CoreBluetooth", "Security", "QuartzCore", "OpenGLES", "CoreGraphics", "CoreFoundation", "CoreText"
   s.requires_arc = true
