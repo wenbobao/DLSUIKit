@@ -11,7 +11,9 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
   s.source       = { :svn => "https://cangzpwsvn01.aia.biz/svn/iPOS/Philippine/Trunk/8_Source/DLS/SignDocSDK/trunk" }
   s.requires_arc = true
-  
+  s.libraries = 'z', 'c++'
+  s.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC','-all_load', '-lstdc++.6', '-lz']}
+
   s.subspec 'Core' do |ss|
     ss.source_files = 'src/dummy.cpp'
     ss.vendored_libraries  = 'src/*.{a}'
@@ -19,8 +21,6 @@ Pod::Spec.new do |s|
                               'src/signdociosfoundations.embeddedframework/signdociosfoundations.framework'
     ss.resources  =  'src/signdociosfoundations.embeddedframework/Resources/*'
     ss.frameworks = "Accelerate", "CoreBluetooth", "Security", "QuartzCore", "OpenGLES", "CoreGraphics", "CoreFoundation", "CoreText"
-    ss.libraries = 'z', 'c++'
-    ss.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC','-all_load', '-lstdc++.6', '-lz']}
   end
 
   s.subspec 'TFS' do |ss|
