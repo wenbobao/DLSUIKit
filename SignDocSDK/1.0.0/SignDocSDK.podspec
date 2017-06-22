@@ -13,6 +13,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.libraries = 'z', 'c++'
   s.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC','-all_load', '-lstdc++.6', '-lz']}
+  s.frameworks = "Accelerate", "CoreBluetooth", "Security", "QuartzCore", "OpenGLES", "CoreGraphics", "CoreFoundation", "CoreText"
 
   s.subspec 'Core' do |ss|
     ss.source_files = 'src/dummy.cpp'
@@ -20,7 +21,6 @@ Pod::Spec.new do |s|
     ss.vendored_frameworks = 'src/signdociosfoundations.embeddedframework/Frameworks/WacomDevice.framework',
                               'src/signdociosfoundations.embeddedframework/signdociosfoundations.framework'
     ss.resources  =  'src/signdociosfoundations.embeddedframework/Resources/*'
-    ss.frameworks = "Accelerate", "CoreBluetooth", "Security", "QuartzCore", "OpenGLES", "CoreGraphics", "CoreFoundation", "CoreText"
   end
 
   s.subspec 'TFS' do |ss|
