@@ -14,19 +14,15 @@ Pod::Spec.new do |s|
   s.libraries = 'z', 'c++'
   s.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC','-all_load', '-lstdc++.6', '-lz']}
   s.frameworks = "Accelerate", "CoreBluetooth", "Security", "QuartzCore", "OpenGLES", "CoreGraphics", "CoreFoundation", "CoreText"
-
-  s.subspec 'Core' do |ss|
-    ss.source_files = 'src/dummy.cpp'
-    ss.vendored_libraries  = 'src/*.{a}'
-    ss.vendored_frameworks = 'src/signdociosfoundations.embeddedframework/Frameworks/WacomDevice.framework',
+  s.source_files = 'src/dummy.cpp'
+  s.vendored_libraries  = 'src/*.{a}'
+  s.vendored_frameworks = 'src/signdociosfoundations.embeddedframework/Frameworks/WacomDevice.framework',
                               'src/signdociosfoundations.embeddedframework/signdociosfoundations.framework'
-    ss.resources  =  'src/signdociosfoundations.embeddedframework/Resources/*'
-  end
+  s.resources  =  'src/signdociosfoundations.embeddedframework/Resources/*'
 
-  s.subspec 'TFS' do |ss|
+  s.subspec 'include' do |ss|
     ss.source_files = 'src/include/*.{h}'
     ss.resources = 'src/signdoc.xcassets'
-    ss.dependency 'Core'
   end
 
 end
