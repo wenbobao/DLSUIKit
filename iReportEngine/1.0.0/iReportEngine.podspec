@@ -14,4 +14,7 @@ Pod::Spec.new do |s|
   s.user_target_xcconfig =   {'OTHER_LDFLAGS' => '-lObjC'}
   s.frameworks = "CoreText", "Foundation"
   s.source_files = 'src/iReportEngine_Version.h', 'src/iReportEngine/**/*.{h,m}'
+  s.prefix_header_file = 'src/iReportEngine/iReportEngine-Prefix.pch'
+  s.dependency 'DLSGDataXMLNode' 
+  s.dependency 'DLSNKDBarcode' 
 end
